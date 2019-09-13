@@ -9,4 +9,10 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Resources.addResource(req.body).then(resource => {
+        res.status(200).json(resource);
+    });
+});
+
 module.exports = router;
